@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+      Ingresar lectura
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list lines="full">
+    <ion-item *ngIf="lectura">
+      <ion-input required type="text" placeholder="nombre" [(ngModel)]="lectura.nombre"></ion-input>
+    </ion-item>
+    
+    <ion-item *ngIf="lectura">
+      <ion-input required type="text" placeholder="contenido" [(ngModel)]="lectura.contenido"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="lectura">
+      <ion-input required type="number" placeholder="factor" [(ngModel)]="lectura.factor"></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" (click)="saveLectura()">Save</ion-button>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" color="danger">
+    <ion-fab-button color="danger" routerLink="/" routerDirection="forward" (click)="onRemove(lectId)">
+      <ion-icon name="trash"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

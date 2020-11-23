@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { LecturaI } from '../models/task.interface';
+import { LecturaService } from '../services/lectura.service'
 
 @Component({
   selector: 'app-home',
@@ -6,7 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  lecturas: LecturaI[];
 
-  constructor() {}
+  constructor(private lecturaService: LecturaService) {}
 
+  ngOnInit(){
+    this.lecturaService.getLecturas().subscribe(res => {
+      this.lecturas = res;
+    });
+  }
 }

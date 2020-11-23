@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "lectura-d97ab": {
+      "hosting": {
+        "app": [
+          "lectura-d97ab"
+        ]
+      }
+    }
+  }
+}
