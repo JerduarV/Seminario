@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Codigo Test</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating">Código Test</ion-label>
+      <ion-input type="text" #codigo required></ion-input>
+    </ion-item>
+    
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" (click)="getTest(codigo)" expand="block">Ingresar a test</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+
+  <ion-row>
+    <ion-col>
+      <p class="ion-text-end">
+        <a routerLink="/register">Registrate</a>
+      </p>
+    </ion-col>
+  </ion-row>
+</ion-content>

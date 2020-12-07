@@ -40,6 +40,18 @@ const routes: Routes = [
   {
     path: 'forgot-pass',
     loadChildren: () => import('./pages/forgot-pass/forgot-pass.module').then( m => m.ForgotPassPageModule)
+  },
+  {
+    path: 'lecturas/:user',
+    loadChildren: () => import('./pages/lecturas/lecturas.module').then( m => m.LecturasPageModule)
+  },
+  {
+    path: 'test-lect/:id',
+    loadChildren: () => import('./pages/test-lect/test-lect.module').then( m => m.TestLectPageModule)
+  },
+  {
+    path: 'codigo',
+    loadChildren: () => import('./pages/codigo/codigo.module').then( m => m.CodigoPageModule)
   }
 ];
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LecturaI } from '../models/task.interface';
-import { LecturaService } from '../services/lectura.service'
+import { LecturaService } from '../services/lectura.service';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-home',
@@ -9,10 +10,12 @@ import { LecturaService } from '../services/lectura.service'
 })
 export class HomePage {
   lecturas: LecturaI[];
+  user_id: String;
 
-  constructor(private lecturaService: LecturaService) {}
+  constructor(private lecturaService: LecturaService) { }
 
-  ngOnInit(){
+  ngOnInit() {
+    this.user_id = firebase.auth().currentUser.uid;
     this.lecturaService.getLecturas().subscribe(res => {
       this.lecturas = res;
     });

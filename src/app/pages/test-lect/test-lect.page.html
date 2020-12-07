@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>
+
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list lines="full">
+    <ion-item *ngIf="lectura">
+      <form>
+        <p>
+          <ng-container *ngFor="let pal of arreglo_palabras; index as i">
+            <div *ngIf="(i+1) % 5 == 0; then ThenBlock else ElseBlock"></div>
+            <ng-template #ThenBlock>
+              <ion-input placeholder="Completar" color="primary"></ion-input>
+            </ng-template>
+            <ng-template #ElseBlock>
+              {{ pal }}
+            </ng-template>
+          </ng-container>
+        </p>
+        {{ lectura.contenido }}
+      </form>
+    </ion-item>
+
+  </ion-list>
+  <ion-button expand="full" (click)="saveLectura()">Enviar</ion-button>
+
+</ion-content>

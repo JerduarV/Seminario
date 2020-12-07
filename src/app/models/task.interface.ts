@@ -3,4 +3,5 @@ export interface LecturaI{
     nombre: string;
     contenido: string;
     factor: number;
+    user_id: string;
 }

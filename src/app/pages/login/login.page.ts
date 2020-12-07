@@ -19,7 +19,7 @@ export class LoginPage implements OnInit {
       const user = await this.authService.login(email.value, password.value);
       if(user){
         const v = this.authService.isVerified(user);
-        this.redirectUser(v);
+        this.redirectUser(v, user.uid);
       }
     } catch (error) {
       console.log('Error', error);
@@ -31,16 +31,17 @@ export class LoginPage implements OnInit {
       const user = await this.authService.loginGoogle();
       if(user){
         const v = this.authService.isVerified(user);
-        this.redirectUser(v);
+        this.redirectUser(v, user.uid);
       }
     } catch (error) {
       console.log('Error', error);
     }
   }
 
-  private redirectUser(verified: boolean): void{
+  private redirectUser(verified: boolean, u_id: string): void{
     if(verified){
-      this.router.navigate(['admin']);
+      //this.router.navigate(['admin']);
+      this.router.navigate(['home']);
     }else{
       this.router.navigate(['verify-email']);
     }

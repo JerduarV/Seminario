@@ -14,7 +14,8 @@ export class LecturaDetailsPage implements OnInit {
   lectura: LecturaI = {
     nombre: '',
     factor: 5,
-    contenido: ''
+    contenido: '',
+    user_id: ''
   }
 
   lectId = null;

@@ -13,7 +13,7 @@
     </ion-item>
     
     <ion-item *ngIf="lectura">
-      <ion-input required type="text" placeholder="contenido" [(ngModel)]="lectura.contenido"></ion-input>
+      <ion-textarea required type="text" rows="10" placeholder="contenido" [(ngModel)]="lectura.contenido"></ion-textarea>
     </ion-item>
 
     <ion-item *ngIf="lectura">
